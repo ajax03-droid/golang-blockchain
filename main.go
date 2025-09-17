@@ -18,9 +18,9 @@ func main() {
 	chain.AddBlock("Third Block")
 
 	for _, block := range chain.Blocks {
-		fmt.Println(block.PrevHash)
-		fmt.Println(block.Data)
-		fmt.Println(block.Hash)
+		fmt.Printf("Previous Block: %x\n", block.PrevHash)
+		fmt.Printf("Data in Block: %s\n", block.Data)
+		fmt.Printf("Hash: %x\n", block.Hash)
 
 		pow := blockchain.NewProof(block)
 		fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Validate()))
